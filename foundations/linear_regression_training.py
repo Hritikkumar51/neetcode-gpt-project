@@ -27,6 +27,8 @@ class Solution:
         N=len(X)
         for i in range(num_iterations):
             model_prediction=self.get_model_prediction(X, initial_weights)
+
+            #running the below loop 3 times because, there are 3 initial_weights to be changed. Given in Q.
             for j in range(3):
                 gradient=self.get_derivative(model_prediction,Y,N,X,j)
                 initial_weights[j] -=self.learning_rate*gradient
