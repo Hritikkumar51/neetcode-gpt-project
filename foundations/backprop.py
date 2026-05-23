@@ -31,8 +31,8 @@ class Solution:
 
 
         ########## Another simple solution ##########
-        z=np.dot(x,w)+b
-        y_hat=1/(1+np.exp(-z))
-        dL_dw=np.round((y_hat-y_true)*y_hat*(1-y_hat)*x,5)
-        dL_db=np.round(float((y_hat-y_true)*y_hat*(1-y_hat)),5)
+        z=np.dot(x,w)+b #Forward calculation
+        y_hat=1/(1+np.exp(-z)) #sigmoid calculation
+        dL_dw=np.round((y_hat-y_true)*y_hat*(1-y_hat)*x,5) #Gradient calculation w.r.t w
+        dL_db=np.round(float((y_hat-y_true)*y_hat*(1-y_hat)),5) #Gradient calculation w.r.t b
         return dL_dw,dL_db
